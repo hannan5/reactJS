@@ -1,10 +1,12 @@
-import { Navbar as Navbarreact, Container, Nav, Button } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../firebase/firebase'
 import Searchbar from './search'
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { useState } from 'react';
 import { Mentions, Menu } from 'antd';
+import { HomeIcon } from '../assests/icons';
+import { HomeOutlined, UsergroupDeleteOutlined, SettingOutlined, ContainerOutlined} from '@ant-design/icons';
+import { Button } from 'bootstrap';
 
 const Navbar = () =>{
     const navigate = useNavigate()
@@ -22,15 +24,28 @@ const Navbar = () =>{
         <>
         <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" className='menu-nav' style={{ height: 55 }}>
             <Menu.Item>
-                <h3>Friends App</h3>
+                <h3 style={{marginTop: '13px'}}>Friends App</h3>
             </Menu.Item>
             <Menu.Item>
 <Searchbar/>
 
             </Menu.Item>
-            <Menu.Item></Menu.Item>
-            <Menu.Item></Menu.Item>
-
+            <Menu.Item style={{marginLeft:'25px'}} >
+                <Link to='/home'>
+            <HomeOutlined style={{ fontSize: 25, width:'70px' }} />
+            </Link>
+            </Menu.Item>
+            <Menu.Item>
+            <SettingOutlined style={{ fontSize: 25, width:'70px' }} />
+            </Menu.Item>
+            <Menu.Item>
+            <ContainerOutlined style={{ fontSize: 25, width:'70px' }} />
+            </Menu.Item>
+            <Menu.Item>
+                <Link to='/profile'>
+            <UsergroupDeleteOutlined style={{ fontSize: 25, width:'70px' }} />
+            </Link>
+            </Menu.Item>
         </Menu>
         {/* <Navbarreact bg="light" expand="lg">
                 <Container>

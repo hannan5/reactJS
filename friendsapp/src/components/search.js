@@ -77,13 +77,15 @@ const handlehchange = () =>{
 return(
     <>
     
-    <div className='searchbar' >
+    <div className='searchbar' style={{
+                marginTop: '12px',
+                marginLeft: '-22px',}}>
 
     <Search
       placeholder="Search"
       allowClear
     //   enterButton="Search"
-      size="small"
+      size="medium"
       onSearch={onSearch}
       onChange={profileSuggest}
       style={{marginTop:'-2px', marginLeft:'20px'}}

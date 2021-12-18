@@ -1,6 +1,5 @@
-
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { auth, Firestore } from '../firebase/firebase'
 import AppModal from './modal'
 import './profile.css'
@@ -9,12 +8,18 @@ import { HomeIcon } from "../assests/icons";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Profilemodal from './profileModal'
+import {Button} from 'antd'
 
 
 const Profile = () => {
 
     const [userdata, setuserdata] = useState([])
 
+    const navigate = useNavigate()
+    
+    const logouthandler = () => {
+        auth.signOut().then(navigate('/'))
+    }
 
 
 
@@ -50,9 +55,9 @@ const Profile = () => {
                     <div className="col-lg-6 col-12" style={{ backgroundColor: '#f7f7f7' }}>
                         <div className='profile-container'>
                             <div className='profilehead'>
-                                <h1 style={{ textAlign: 'center' }}><Link to='/home' style={{ color: '#000', textDecoration: 'none' }}><HomeIcon sx={{ fontSize: 35, color: '#1b74e4' }} /> </Link>  </h1>
+                                {/* <h1 style={{ textAlign: 'center' }}><Link to='/home' style={{ color: '#000', textDecoration: 'none' }}><HomeIcon sx={{ fontSize: 35, color: '#1b74e4' }} /> </Link>  </h1> */}
                                 {/* <h1 style={{ textAlign: 'center' }}> <Link to='/setting' style={{ color: '#000',textDecoration:'none' }}> <SettingsIcon sx={{ fontSize: 35, color:'#1b74e4' }}/> </Link> </h1> */}
-                                <h1 style={{ textAlign: 'center', borderBottom: '2px solid #1b74e4' }}> <AccountCircleIcon sx={{ fontSize: 35, color: '#1b74e4' }} /> </h1>
+                                {/* <h1 style={{ textAlign: 'center', borderBottom: '2px solid #1b74e4' }}> <AccountCircleIcon sx={{ fontSize: 35, color: '#1b74e4' }} /> </h1> */}
                             </div>
                             <div className="profile-sidebar">
 
@@ -83,6 +88,13 @@ const Profile = () => {
                                 </div>
                                 <div>
                                     <Profilemodal />
+                                </div>
+                                <div>
+            <Button type='primary' style={{width: '104px',
+    height: '30px',
+    marginTop: '10px',
+}} onClick={logouthandler}>Logout</Button>
+
                                 </div>
                                 {/* <!-- END MENU --> */}
                             </div>

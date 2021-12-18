@@ -10,7 +10,7 @@ const AppModal = () => {
     onAuthStateChanged(auth, (currentUser)=>{
         setUser(currentUser)
     })
-    const name = auth.currentUser.displayName
+    const name = user.displayName
     const uid = user.uid
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [info, setinfo] = useState({})

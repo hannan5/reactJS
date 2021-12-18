@@ -119,31 +119,32 @@ body {
     background: #fff;
     min-height: 460px;
   }
-  .profilehead{
+.profilehead{
     display: flex;
     justify-content: space-around;
   }
 
 
 .suggestion{
-  background: rgb(255, 255, 255) !important;
-  z-index: 50;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 5px #00000057;
-  height: 180px;
-margin-top: -50px;
-
-}
+    background: rgb(255, 255, 255) !important;
+    z-index: 50;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 5px #00000057;
+    height: 180px;
+  margin-top: -23px;
+  margin-left: 21px;
+  
+  }
 .name{
-
-    color: #7e7e7e;
-    cursor: pointer;
-    padding: 3px 12px;
-    font-size: 12px;
-    transition: 0.2s;
-}
+  
+      color: #7e7e7e;
+      cursor: pointer;
+      padding: 0px 12px;
+      font-size: 12px;
+      transition: 0.2s;
+  }
 .postname{
   height: 50px;
   background-color: #e7eaee;
