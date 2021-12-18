@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+
+body {
+    background: #F1F3FA;
+  }
+.profile-container{
+    
+    width: 100%;
+    background: transparent;
+    box-shadow: 0 8px 8px rgb(0 0 0 / 25%);
+    background-color: none;
+    height: 100vh;
+
+}  
+  /* Profile container */
+  .profile {
+    margin: 20px 0;
+  }
+  
+  /* Profile sidebar */
+  .profile-sidebar {
+    padding: 100px 0 10px 0;
+    /* background: #fff; */
+}
+  .profile-userpic{
+  align-items: center;
+  display: flex;
+}
+  .profile-userpic img {
+    float: none;
+    margin: 0 auto;
+    width: 25%;
+    height: 50%;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+  }
+  
+  .profile-usertitle {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .profile-usertitle-name {
+    color: #5a7391;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+  }
+  
+  .profile-usertitle-job {
+    text-transform: uppercase;
+    color: #5b9bd1;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .profile-userbuttons {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .profile-userbuttons .btn {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 15px;
+    margin-right: 5px;
+  }
+  
+  .profile-userbuttons .btn:last-child {
+    margin-right: 0px;
+  }
+      
+  .profile-usermenu {
+    margin-top: 30px;
+  }
+  
+  .profile-usermenu ul li {
+    border-bottom: 1px solid #f0f4f7;
+  }
+  
+  .profile-usermenu ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .profile-usermenu ul li a {
+    color: #93a3b5;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .profile-usermenu ul li a i {
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  
+  .profile-usermenu ul li a:hover {
+    background-color: #fafcfd;
+    color: #5b9bd1;
+  }
+  
+  .profile-usermenu ul li.active {
+    border-bottom: none;
+  }
+  
+  .profile-usermenu ul li.active a {
+    color: #5b9bd1;
+    background-color: #f6f9fb;
+    border-left: 2px solid #5b9bd1;
+    margin-left: -2px;
+  }
+  
+  /* Profile Content */
+  .profile-content {
+    padding: 20px;
+    background: #fff;
+    min-height: 460px;
+  }
+  .profilehead{
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+.suggestion{
+  background: rgb(255, 255, 255) !important;
+  z-index: 50;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px #00000057;
+  height: 180px;
+margin-top: -50px;
+
+}
+.name{
+
+    color: #7e7e7e;
+    cursor: pointer;
+    padding: 3px 12px;
+    font-size: 12px;
+    transition: 0.2s;
+}
+.postname{
+  height: 50px;
+  background-color: #e7eaee;
+  margin-top: 40px;
+  color: #fff;
+}
+.postname h3{
+  font-size: 16px;
+  padding-top: 15px;
+}
+.postbtn{
+  width: 100%;
+  background-color: #f0f2f5;
+  color: #000;
+  /* border: noe; */
+  border: 1px solid #f0f2f5;
+  /* padding: 5px; */
+  /* margin: 10px -16px; */
+  border-radius: 10px;
+}
+.postbtn:hover{
+  background-color: #e4e6eb;
+  color: #000;
+}
+/* .profile-container:hover{
+overflow-y: scroll;
+} */
+.profileScroll{
+  overflow-y: scroll;
+}
+/* .post{
+
+} */
