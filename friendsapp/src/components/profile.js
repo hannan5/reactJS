@@ -75,7 +75,6 @@ const Profile = () => {
                                     <ul className="nav" style={{ flexDirection: 'column', alignItems: 'center' }}>
                                         <li>
                                             <h4> email: {userdata.email}</h4>
-
                                         </li>
                                         <br />
                                         <li>
@@ -90,10 +89,10 @@ const Profile = () => {
                                     <Profilemodal />
                                 </div>
                                 <div>
-            <Button type='primary' style={{width: '104px',
+            {/* <Button type='primary' style={{width: '104px',
     height: '30px',
     marginTop: '10px',
-}} onClick={logouthandler}>Logout</Button>
+}} onClick={logouthandler}>Logout</Button> */}
 
                                 </div>
                                 {/* <!-- END MENU --> */}

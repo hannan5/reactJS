@@ -169,12 +169,25 @@ body {
   background-color: #e4e6eb;
   color: #000;
 }
-/* .profile-container:hover{
-overflow-y: scroll;
-} */
-.profileScroll{
-  overflow-y: scroll;
-}
-/* .post{
 
-} */
+.profileScroll{
+  /* overflow-y: scroll; */
+  background-color: #fff;
+  height: 100%;
+}
+.likediv{
+  display: flex;
+  justify-content: space-around;
+}
+.dummybtn{
+  width: 100%;
+  border: none;
+  height: 60px;
+  text-align: left;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding-left: 2px;
+}
+.dummybtn:hover{
+  background-color: rgb(245, 245, 246);
+}

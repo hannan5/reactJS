@@ -6,6 +6,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AppModal from './modal'
 import './profile.css'
+import Rightoption from "../dummy/rightoption";
 const Post = () => {
 
     return (
@@ -14,7 +15,9 @@ const Post = () => {
             <Navbar />
             <div className="container">
                 <div className="row profile">
-                    <div className='col-lg-3 col-0' style={{backgroundColor:'rgb(245, 245, 246)'}}></div>
+                    <div className='col-lg-3 col-0' style={{backgroundColor:'rgb(245, 245, 246)'}}>
+                        <Rightoption/>
+                    </div>
                     <div className="col-lg-6 col-12"style={{backgroundColor:'rgb(245, 245, 246)'}}>
                         <div className='profile-container profileScroll'>
                             <div className='profilehead' style={{borderBottom:'1px solid #fff'}}>
@@ -40,7 +43,9 @@ const Post = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='col-lg-3 col-0' style={{backgroundColor:'rgb(245, 245, 246)'}}></div>
+                    <div className='col-lg-3 col-0' style={{backgroundColor:'rgb(245, 245, 246)'}}>
+                        
+                    </div>
 
                 </div>
 

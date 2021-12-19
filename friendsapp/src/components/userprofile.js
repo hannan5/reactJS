@@ -46,7 +46,7 @@ const Userprofile = () => {
                 <div className="row profile">
                     <div className='col-lg-3 col-1' style={{ backgroundColor: '#f5f5f6' }}></div>
                     <div className="col-lg-6 col-10" style={{ backgroundColor: '#f7f7f7' }}>
-                        <div className='profile-container' style={{overflowY:'scroll'}}>
+                        <div className='profile-container'>
                             {/* <div className='profilehead'>
                                 <h1 style={{ textAlign: 'center' }}><Link to='/home' style={{ color: '#000',textDecoration:'none' }}>Home </Link>  </h1>
 

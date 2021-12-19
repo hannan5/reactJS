@@ -3,7 +3,7 @@
     margin: 10px 4px;
     border-radius: 10px;
   box-shadow: 0 8px 8px rgb(0 0 0 / 25%);
-
+margin-bottom: 30px;
  }
 .card-header{
 text-align: left;
@@ -21,5 +21,13 @@ text-align: left;
 .card-body p{
     margin: 15px 15px;
     text-align: left;
-
+}
+.likediv{
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    background-color: #f7f7f7;
+    border-top: 1px solid #cec6c6;
+    /* margin-top: 9px; */
+    padding-top: 10px;
 }
