@@ -1,6 +1,7 @@
 import './postcard.css'
 import { useEffect, useState } from "react"
 import { Firestore } from "../firebase/firebase"
+import {LikeOutlined, CommentOutlined, ShareAltOutlined} from '@ant-design/icons'
 
 const Postcard = () => {
 
@@ -38,9 +39,9 @@ const Postcard = () => {
                                 {post.postImage ? <img src={postImage} style={{ width: '100%', height: '350px' }} class="img-responsive" /> : <span></span>}
                             </div>
                             <div className='likediv'>
-                                <div><h3>Like</h3></div>
-                                <div><h3>Comment</h3></div>
-                                <div><h3>Share</h3></div>
+                                <div><LikeOutlined style={{ fontSize: 15}} /></div>
+                                <div><CommentOutlined style={{ fontSize: 15}} /></div>
+                                <div><ShareAltOutlined style={{ fontSize: 15}} /></div>
                             </div>
                         </div>
                     </>

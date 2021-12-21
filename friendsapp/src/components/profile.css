@@ -184,9 +184,10 @@ body {
   border: none;
   height: 60px;
   text-align: left;
-  font-size: 17px;
+  font-size: 14px;
   letter-spacing: 1px;
   padding-left: 2px;
+  cursor: pointer;
 }
 .dummybtn:hover{
   background-color: rgb(245, 245, 246);

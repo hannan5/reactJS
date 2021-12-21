@@ -12,7 +12,9 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     const logouthandler = () => {
-        auth.signOut().then(navigate('/'))
+        auth.signOut().then(() =>{navigate('/')
+        window.location.reload(true)
+    })
     }
 
     const [current, setCurrent] = useState('home')
@@ -21,7 +23,6 @@ const Navbar = () => {
     const handleClick = e => {
         setCurrent(e.key);
     };
-
 
     const [user, setUser] = useState({})
     onAuthStateChanged(auth, (currentUser) => {
@@ -54,7 +55,7 @@ const Navbar = () => {
 
                 </Menu.Item>
                 <Menu.Item style={{ marginLeft: '25px' }} >
-                    <Link to='/home'>
+                    <Link to='/'>
                         <HomeOutlined style={{ fontSize: 25, width: '70px' }} />
                     </Link>
                 </Menu.Item>
