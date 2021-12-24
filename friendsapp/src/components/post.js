@@ -15,8 +15,8 @@ const Post = () => {
             <Navbar />
             <div className="container">
                 <div className="row profile">
-                    <div className='col-lg-3 col-0' style={{backgroundColor:'rgb(245, 245, 246)'}}>
-                        <Rightoption/>
+                    <div className='col-lg-3 col-sm-0' style={{backgroundColor:'rgb(245, 245, 246)'}}>
+                        {/* <Rightoption/> */}
                     </div>
                     <div className="col-lg-6 col-12"style={{backgroundColor:'rgb(245, 245, 246)'}}>
                         <div className='profile-container profileScroll'>

@@ -39,8 +39,20 @@ const Login = () => {
   return (
     <>
 
-<div className='container'>
-      <div className='row'>
+<div className='main'>
+  <div className='loginForm'>
+<h1> Login Account </h1>
+<div className='formInput'>
+  <input id='input' type='email' placeholder='Enter your Email' name='email' onChange={inputhandler} />
+  <input id='input' type='password' placeholder='Enter your Password' name='password' onChange={inputhandler}/>
+</div>
+<div className='button'>
+  <button className='loginbtn' onClick={loginhandler}>Login</button>
+  <p>Create a New Account <Link to='/signup' style={{ color: '#000', textDecoration:'none' }}>  Signup </Link> Here</p>
+</div>
+  </div>
+
+      {/* <div className='row'>
       <div className='col-lg-3 col-1'></div>
       <div className='col-lg-6 col-10'>
 
@@ -80,7 +92,7 @@ const Login = () => {
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
               <Button htmlType="submit" onClick={loginhandler} style={{ position: 'relative'}} className='btn-style'>
                 {/* */}
-          login
+          {/* login
         </Button>
               <p>create a new account <Link to='/signup' style={{ color: '#000', textDecoration:'none' }}>  Signup </Link> here</p>
             </Form.Item>
@@ -95,7 +107,7 @@ const Login = () => {
       </div>
       <div className='col-lg-3 col-1'></div>
 
-      </div>
+      </div> */} 
   </div>
 
     </>

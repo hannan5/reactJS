@@ -45,9 +45,9 @@ const Profilemodal = () => {
                 onCancel={handleCancel}
                 footer={[
 
-                    <Button key="submit" onClick={{updatehandler}} style={{ width: '100%' }}>
-                        Update Profile
-        </Button>,
+        //             <Button key="submit" onClick={{updatehandler }} style={{ width: '100%' }}>
+        //                 Update Profile
+        // </Button>,
 
                 ]}
             >
@@ -67,8 +67,8 @@ const Profilemodal = () => {
                                     <Form.Item name={['user', 'introduction']} label="About">
                                         <Input.TextArea type='text' placeholder='Enter Your Bio' name='bio' id='inputitem' onChange={inputhandler}/>
                                     </Form.Item>
-
-                                    {/* <Button onClick={updatehandler}> Update Profile </Button> */}
+{/* <hr/> */}
+                                    <Button onClick={updatehandler}style={{ width: '100%' , bottom:'-34px'}}> Update Profile </Button>
 </div>
 
 

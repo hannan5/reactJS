@@ -335,3 +335,62 @@ font-size: 10px;
 .input{
   display: flex;
 }
+
+
+.main{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: linear-gradient(to right, #2d85b7, #ae2d87); */
+}
+.loginForm{
+  height: 500px;
+  background-color: #f7f7f7;
+    width: 500px;
+    border-radius: 20px;
+    padding: 10px 10px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 19px 40px;
+}
+.loginForm h1{
+  margin-top: 20px;
+}
+.formInput{
+  margin-top: 70px;
+}
+#input, #password, #name{
+  width: 90%;
+    height: 40px;
+    display: block;
+    margin: auto;
+    /* line-height: 10px; */
+    margin-bottom: 50px;
+    border: 1px solid gray;
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    padding-left: 10px;
+    border-block-end: revert;
+    border-block-end-color: #000;
+}
+#input:focus,
+#password:focus,
+#name:focus{
+
+  outline: none;
+  /* border: none; */
+}
+.loginbtn{
+  height: 35px;
+    width: 25%;
+    margin-left: -10px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    background: #000;
+}
+.button p {
+  font-size: 14px;
+    word-spacing: 2px;
+    margin-top: 10px;
+}

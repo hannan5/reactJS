@@ -7,6 +7,7 @@ import { Mentions, Menu, Button } from 'antd';
 import { HomeIcon } from '../assests/icons';
 import { HomeOutlined, UsergroupDeleteOutlined, SettingOutlined, ContainerOutlined } from '@ant-design/icons';
 import { onAuthStateChanged } from 'firebase/auth';
+import logo from '../images/logo.jpg'
 
 const Navbar = () => {
     const navigate = useNavigate()
@@ -47,14 +48,19 @@ const Navbar = () => {
     return (
         <>
             <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" className='menu-nav' style={{ height: 55 }}>
+                <Menu.Item  style={{marginRight:'-40px'}}>
+                    <img src={logo} width='50px' height='50px'/>
+                    </Menu.Item>
+
                 <Menu.Item>
+
                     <h3 style={{ marginTop: '13px' }}>Friends App</h3>
                 </Menu.Item>
-                <Menu.Item style={{ marginRight: '40px' }}>
+                <Menu.Item style={{ marginRight: '0' }}>
                     <Searchbar />
 
                 </Menu.Item>
-                <Menu.Item style={{ marginLeft: '25px' }} >
+                <Menu.Item style={{ marginLeft: '0' }} >
                     <Link to='/'>
                         <HomeOutlined style={{ fontSize: 25, width: '70px' }} />
                     </Link>
@@ -65,18 +71,18 @@ const Navbar = () => {
                 <Menu.Item>
                     <ContainerOutlined style={{ fontSize: 25, width: '70px' }} />
                 </Menu.Item>
-                <Menu.Item style={{ marginRight: '250px' }}>
+                <Menu.Item style={{ marginRight: '220px' }}>
                     <Link to='/profile'>
                         <UsergroupDeleteOutlined style={{ fontSize: 25, width: '70px' }} />
                     </Link>
                 </Menu.Item>
-                <Menu.Item style={{ marginRight: '-40px' }}>
+                <Menu.Item style={{ marginRight: '0' }}>
                     <div style={{ display: 'flex' }}>
                         <img src={data.image} alt='profile' style={{ width: '30px', height: '30px', borderRadius: '50px', marginTop: '10px' }} class="img-responsive" />
                         <h4 style={{ marginTop: '15px' }}>{data.name}</h4>
                     </div>
                 </Menu.Item>
-                <Menu.Item style={{ marginLeft: '60px' }}>
+                <Menu.Item style={{ marginLeft: '0' }}>
                     <Button className='btnStyle' onClick={logouthandler}>Logout</Button>
                 </Menu.Item>
 

@@ -1,6 +1,6 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useState } from 'react';
-import {useNavigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import { auth, Firestore } from '../firebase/firebase';
 import { updateProfile } from 'firebase/auth';
 
@@ -31,11 +31,13 @@ const Signup = () => {
         })
 
       })
+      // .catch((error) => {
+      //   const errorMessage = error.message;
+      //   console.log(errorMessage);
+      // });
     .then(navigate('/'))
-    // .catch((error) => {
-    //   const errorMessage = error.message;
-    //   console.log(errorMessage);
-    // });
+    window.location.reload(true)
+    
   }
   
   const onFinish = (values) => {
@@ -47,7 +49,23 @@ const Signup = () => {
   };
   return (
     <>
-    <div className='container'>
+<div className='main'>
+  <div className='loginForm'>
+<h1> Create A New Account </h1>
+<div className='formInput'>
+<input id='input' type='text' placeholder='Enter your Name' name='name' onChange={inputhandler}/>
+  <input id='input' type='email' placeholder='Enter your Email' name='email' onChange={inputhandler} />
+  <input id='input' type='password' placeholder='Enter your Password' name='password' onChange={inputhandler}/>
+</div>
+<div className='button'>
+  <button className='loginbtn' onClick={Submithandler}>Signup</button>
+  <p>Already have an Account? <Link to='/' style={{ color: '#000', textDecoration:'none' }}>  Login </Link> Here</p>
+
+</div>
+  </div>
+  </div>
+  
+    {/* <div className='container'>
       <div className='row'>
       <div className='col-lg-3 col-1'></div>
       <div className='col-lg-6 col-10'>
@@ -96,12 +114,6 @@ const Signup = () => {
                 Signup
         </Button>
             </Form.Item>
-
-            {/* <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          <Link to='login'> Login </Link>
-        </Button>
-      </Form.Item> */}
           </div>
         </Form>
       </div>
@@ -109,7 +121,7 @@ const Signup = () => {
       <div className='col-lg-3 col-1'></div>
 
       </div>
-  </div>
+  </div> */}
     </>
 
   )
