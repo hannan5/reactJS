@@ -31,10 +31,10 @@ const Signup = () => {
         })
 
       })
-      // .catch((error) => {
-      //   const errorMessage = error.message;
-      //   console.log(errorMessage);
-      // });
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      })
     .then(navigate('/'))
     window.location.reload(true)
     
@@ -53,9 +53,9 @@ const Signup = () => {
   <div className='loginForm'>
 <h1> Create A New Account </h1>
 <div className='formInput'>
-<input id='input' type='text' placeholder='Enter your Name' name='name' onChange={inputhandler}/>
-  <input id='input' type='email' placeholder='Enter your Email' name='email' onChange={inputhandler} />
-  <input id='input' type='password' placeholder='Enter your Password' name='password' onChange={inputhandler}/>
+<input id='name' type='text' placeholder='Enter your Name' name='name' onChange={inputhandler}/>
+  <input id='email' type='email' placeholder='Enter your Email' name='email' onChange={inputhandler} />
+  <input id='password' type='password' placeholder='Enter your Password' name='password' onChange={inputhandler}/>
 </div>
 <div className='button'>
   <button className='loginbtn' onClick={Submithandler}>Signup</button>

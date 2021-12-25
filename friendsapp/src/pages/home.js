@@ -7,7 +7,7 @@ const Home = () => {
     // let uname = auth.currentUser.email
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <Profile/>
         </>
     )

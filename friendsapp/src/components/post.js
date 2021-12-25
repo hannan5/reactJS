@@ -12,7 +12,7 @@ const Post = () => {
     return (
 
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="container">
                 <div className="row profile">
                     <div className='col-lg-3 col-sm-0' style={{backgroundColor:'rgb(245, 245, 246)'}}>

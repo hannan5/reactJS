@@ -43,8 +43,8 @@ const Login = () => {
   <div className='loginForm'>
 <h1> Login Account </h1>
 <div className='formInput'>
-  <input id='input' type='email' placeholder='Enter your Email' name='email' onChange={inputhandler} />
-  <input id='input' type='password' placeholder='Enter your Password' name='password' onChange={inputhandler}/>
+  <input id='email' type='email' placeholder='Enter your Email' name='email' onChange={inputhandler} />
+  <input id='password' type='password' placeholder='Enter your Password' name='password' onChange={inputhandler}/>
 </div>
 <div className='button'>
   <button className='loginbtn' onClick={loginhandler}>Login</button>

@@ -41,7 +41,7 @@ const Userprofile = () => {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar />?\ */}
             <div className="container">
                 <div className="row profile">
                     <div className='col-lg-3 col-1' style={{ backgroundColor: '#f5f5f6' }}></div>

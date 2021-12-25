@@ -133,8 +133,9 @@ body {
     overflow: hidden;
     box-shadow: 0 0 5px #00000057;
     height: 180px;
-  margin-top: -23px;
+  margin-top: -13px;
   margin-left: 21px;
+  width: 270px;
   
   }
 .name{
