@@ -1,15 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { auth, Firestore } from '../firebase/firebase'
-import AppModal from './modal'
 import './profile.css'
-import Searchbar from './search'
-import { HomeIcon } from "../assests/icons";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import SettingsIcon from '@mui/icons-material/Settings';
 import Profilemodal from './profileModal'
-import {Button} from 'antd'
-
+import pic from '../images/bg.jpeg'
 
 const Profile = () => {
 
@@ -17,9 +11,6 @@ const Profile = () => {
 
     const navigate = useNavigate()
     
-    const logouthandler = () => {
-        auth.signOut().then(navigate('/'))
-    }
 
 
 
@@ -51,25 +42,28 @@ const Profile = () => {
         <>
             <div className="container">
                 <div className="row profile">
-                    <div className='col-lg-3 col-0' style={{ backgroundColor: '#f5f5f6' }}></div>
-                    <div className="col-lg-6 col-12" style={{ backgroundColor: '#f7f7f7' }}>
+                    <div className='col-lg-2 col-0' style={{ backgroundColor: '#f5f5f6' }}></div>
+                    <div className="col-lg-8 col-12" style={{ backgroundColor: '#f7f7f7' }}>
                         <div className='profile-container'>
                             <div className='profilehead'>
+                                <img src={pic} style={{height: '267px',
+    position: 'relative',
+    width: '100%'}}></img>
                                 {/* <h1 style={{ textAlign: 'center' }}><Link to='/home' style={{ color: '#000', textDecoration: 'none' }}><HomeIcon sx={{ fontSize: 35, color: '#1b74e4' }} /> </Link>  </h1> */}
                                 {/* <h1 style={{ textAlign: 'center' }}> <Link to='/setting' style={{ color: '#000',textDecoration:'none' }}> <SettingsIcon sx={{ fontSize: 35, color:'#1b74e4' }}/> </Link> </h1> */}
                                 {/* <h1 style={{ textAlign: 'center', borderBottom: '2px solid #1b74e4' }}> <AccountCircleIcon sx={{ fontSize: 35, color: '#1b74e4' }} /> </h1> */}
                             </div>
-                            <div className="profile-sidebar">
+                            <div className="profile-sidebar" style={{marginTop:'-180px'}}>
 
                                 {/* <h1>{uname}</h1> */}
                                 <div className="profile-userpic">
-                                    <img src={userdata.image} style={{ width: '250px', height: '250px' }} class="img-responsive" alt="">
+                                    <img src={userdata.image} style={{ width: '250px', height: '250px', position:'relative' }} class="img-responsive" alt="">
                                     </img>
                                 </div>
                                 {/* <!-- END SIDEBAR USERPIC --> */}
                                 {/* <!-- SIDEBAR USER TITLE --> */}
                                 <div className="profile-usertitle">
-                                    <h3>Name: {userdata.name}</h3>
+                                    <h3>{userdata.name}</h3>
                                 </div>
                                 <div className="profile-usermenu">
                                     <ul className="nav" style={{ flexDirection: 'column', alignItems: 'center' }}>
@@ -99,7 +93,7 @@ const Profile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='col-lg-3 col-0' style={{ backgroundColor: '#f5f5f6', }}></div>
+                    <div className='col-lg-2 col-0' style={{ backgroundColor: '#f5f5f6', }}></div>
 
                 </div>
 

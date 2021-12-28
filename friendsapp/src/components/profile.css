@@ -21,6 +21,7 @@ body {
   /* Profile sidebar */
   .profile-sidebar {
     padding: 100px 0 10px 0;
+    /* margin-top: -100px; */
     /* background: #fff; */
 }
   .profile-userpic{
@@ -35,6 +36,9 @@ body {
     -webkit-border-radius: 50% !important;
     -moz-border-radius: 50% !important;
     border-radius: 50% !important;
+    border: 2px solid #fff;
+    box-shadow: rgb(0 0 0 / 30%) 0px 7px 25px;
+
   }
   
   .profile-usertitle {
