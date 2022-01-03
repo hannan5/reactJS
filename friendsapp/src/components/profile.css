@@ -27,6 +27,7 @@ body {
   .profile-userpic{
   align-items: center;
   display: flex;
+  flex-direction: column;
 }
   .profile-userpic img {
     float: none;
@@ -43,7 +44,7 @@ body {
   
   .profile-usertitle {
     text-align: center;
-    margin-top: 20px;
+    margin-top: -50px;
   }
   
   .profile-usertitle-name {
@@ -126,9 +127,40 @@ body {
 .profilehead{
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
   }
-
-
+.coverphoto{
+  width: 100%;
+}
+.editcover{
+  bottom: 19px;
+    position: relative;
+    align-self: flex-end;
+    bottom: 40px;
+    right: 20px;
+}
+.editcover button {
+  width: 100px;
+  height: 30px;
+  border-radius: 7px;
+  border: none;
+  font-weight: bold;
+}
+.profile{
+  width: 100%;
+}
+.editprofile{
+  bottom: 19px;
+  position: relative;
+  /* align-self: flex-end; */
+  bottom: 71px;
+  right: -80px;
+}
+.editprofile button{
+  width: 48px;
+  height: 48px;
+  border-radius: 50px;
+}
 .suggestion{
     background: rgb(255, 255, 255) !important;
     z-index: 50;

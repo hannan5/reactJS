@@ -1,0 +1,84 @@
+/* Post tabs   Start*/
+
+.intro{
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0 8px 8px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+}
+.intro h3{
+text-align: left;
+font-weight: bolder;
+margin-top: 10px;
+}
+.intro button{
+    width: 80%;
+    height: 40px;
+    margin: 15px;
+    background-color: #E4E6EB;
+    border: none;
+    border-radius: 10px;
+}
+.intro-detail{
+    text-align: left;
+    margin: 10px 0px 0px 10px;
+}
+.intro-detail span{
+font-size: 15px;
+text-align: left;
+}
+.intro-detail span a{
+    font-weight: 600;
+}
+
+.addpost{
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0 8px 8px rgb(0 0 0 / 25%);
+    border-radius: 10px;   
+    padding: 20px 15px;
+}
+.post{
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0 8px 8px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    margin: 30px 0px;   
+}
+.postHeader{
+display: flex;
+flex-direction: row;
+}
+.postHeader img{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+.caption{
+    text-align: left;
+    padding: 0px 20px;
+}
+.postHeader .name{
+margin: 18px -15px;
+    font-size: 15px;
+    color: #000;
+}
+.postImage{
+    width: 100%;
+    height: 450px;
+}
+.postImage img{
+width: 100%;
+height: 100%;
+}
+.likediv{
+    margin-bottom: 10px;
+}
+/* .likediv{
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    background-color: #f7f7f7;
+    border-top: 1px solid #cec6c6;
+    /* margin-top: 9px; */
+    /* padding-top: 10px; */
+/* } */
+
+    /* Post tabs   End*/

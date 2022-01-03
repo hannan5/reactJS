@@ -5,8 +5,9 @@ import { Button } from "antd";
 
 
 
-const Uploadimage = () =>{
-
+const Uploadimage = (props) =>{
+console.log(props.pic);
+const pic = props.pic
     const [user, setUser] = useState({})
     onAuthStateChanged(auth, (currentUser)=>{
         setUser(currentUser)
@@ -43,7 +44,7 @@ uploadtask.on(
             Firestore.collection('profile').where('uid', '==', auth.currentUser.uid).get()
             .then(
                 Firestore.collection('profile').doc(uid).update({
-                    image:imageUrl,
+                    [pic]:imageUrl,
                 })
             )
         //     (function(querySnapshot) {

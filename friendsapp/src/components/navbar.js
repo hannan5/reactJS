@@ -78,7 +78,7 @@ const Navbar = () => {
                 </Menu.Item>
                 <Menu.Item style={{ marginRight: '0' }}>
                     <div style={{ display: 'flex' }}>
-                        <img src={data.image} alt='profile' style={{ width: '30px', height: '30px', borderRadius: '50px', marginTop: '10px' }} class="img-responsive" />
+                        <img src={data.profile} alt='profile' style={{ width: '30px', height: '30px', borderRadius: '50px', marginTop: '10px' }} class="img-responsive" />
                         <h4 style={{ marginTop: '15px' }}>{data.name}</h4>
                     </div>
                 </Menu.Item>
