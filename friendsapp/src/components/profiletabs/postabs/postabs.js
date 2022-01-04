@@ -1,13 +1,15 @@
 import AppModal from '../../modal'
 import '../profiletabs.css'
-import pic from '../download.jpeg'
 import {LikeOutlined, CommentOutlined, ShareAltOutlined} from '@ant-design/icons'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { auth, Firestore } from '../../../firebase/firebase'
+import CurentUserContext from '../../../context/CurrentUserContext'
 
 
 const Postabs = () => {
 
+    const user = useContext(CurentUserContext)
+    console.log(user)
     const [data, setdata] = useState([])
     const getpost = () => {
         Firestore.collection('post').where('uid', '==', auth.currentUser.uid).get().then(function (querySnapshot) {
@@ -57,14 +59,14 @@ const Postabs = () => {
                         </div>
                         {data.map((post) => {
 
-const { postText, postName, postImage } = post
+const { postText, postName, postImage, profile } = post
 // {console.log(post.postImage)}
 return (
     <>
                         <div className='post'>
                             <div className='postHeader'>
                                 <div style={{margin:'10px 10px'}}>
-                                <img src={pic}/>
+                                <img src={profile}/>
                                 </div>
                                 <div className='name'>
                                 <span>{postName}</span>

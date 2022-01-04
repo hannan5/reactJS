@@ -3,9 +3,10 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import './App.css';
 import CurentUserContext from "./context/CurrentUserContext";
-import { auth } from "./firebase/firebase";
+import { auth, fire, Firestore } from "./firebase/firebase";
 import Routes from './routes/routes';
 import Routesnotlogin from "./routes/routesnotlogin";
+import { doc, onSnapshot } from "firebase/firestore";
 
 <link
   rel="stylesheet"
@@ -24,6 +25,9 @@ function App() {
       if (user) {
         setFirebaseAuth(true);
         setCurrentUser(user)
+        onSnapshot(doc(Firestore, 'profile',`${user.uid}`),(doc)=>{
+          setCurrentUser(doc.data())
+        })
 
       }
 

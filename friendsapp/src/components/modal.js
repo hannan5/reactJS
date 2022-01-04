@@ -1,11 +1,14 @@
 import './profile.css'
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Modal, Button, Input } from 'antd';
 import { auth, Firestore, storage } from '../firebase/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
+import CurentUserContext from '../context/CurrentUserContext';
 
 const AppModal = () => {
 
+    const userobj = useContext(CurentUserContext)
+    console.log(userobj)
     const [user, setUser] = useState({})
     onAuthStateChanged(auth, (currentUser)=>{
         setUser(currentUser)
@@ -69,7 +72,8 @@ uploadtask.on(
         postText: info.post,
         postName: name,
         postImage:imageUrl,
-        uid:uid
+        uid:uid,
+        profile:userobj.profile
     })
 
     }

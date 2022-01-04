@@ -1,43 +1,15 @@
-import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { auth, Firestore } from '../firebase/firebase'
+import { useContext, useEffect, useState } from 'react'
 import './profile.css'
 import Profilemodal from './profileModal'
-import pic from '../images/bg.jpeg'
 import Uploadimage from './uploadimage'
 import Modal from 'antd/lib/modal/Modal'
 import Profilephotomodal from './profilephotomodal'
 import Profiletabs from './profiletabs/profiletabs'
+import CurentUserContext from '../context/CurrentUserContext'
 const Profile = () => {
 
-    const [userdata, setuserdata] = useState([])
+const userobj = useContext(CurentUserContext)
 
-    const navigate = useNavigate()
-
-
-
-
-    //     const  getUser = async ()  => {
-    //         const data = await getDocs(docRef)
-    //         setuserdata(data.docs.map((doc)=> doc.data().uid === auth.currentUser.uid))
-    //         console.log(userdata)
-    //         // {setusername(data.docs.map((doc)=>doc.data()))}
-    // setload(false)
-    //     }
-    const getuser = () => {
-        Firestore.collection('profile').where('uid', '==', auth.currentUser.uid).get().then(function (querySnapshot) {
-            let posts = querySnapshot.docs.map(doc => doc.data())
-            // return posts
-            posts.map((elem) => {
-                setuserdata(elem)
-            })
-
-        })
-    }
-
-    useEffect(() => {
-        getuser()
-    }, [])
     const [isModalVisible, setIsModalVisible] = useState(false);
     const showModal = () => {
         setIsModalVisible(true);
@@ -57,7 +29,7 @@ const Profile = () => {
                         <div className='profile-container'>
                             <div className='profilehead'>
                                 <div className='coverphoto'>
-                                <img src={userdata.cover} style={{
+                                <img src={userobj.cover} style={{
                                     height: '267px',
                                     position: 'relative',
                                     width: '100%'
@@ -74,16 +46,12 @@ const Profile = () => {
                 <Uploadimage pic={'cover'}/>
 </Modal>
                                 </div>
-                                {/* <h1 style={{ textAlign: 'center' }}><Link to='/home' style={{ color: '#000', textDecoration: 'none' }}><HomeIcon sx={{ fontSize: 35, color: '#1b74e4' }} /> </Link>  </h1> */}
-                                {/* <h1 style={{ textAlign: 'center' }}> <Link to='/setting' style={{ color: '#000',textDecoration:'none' }}> <SettingsIcon sx={{ fontSize: 35, color:'#1b74e4' }}/> </Link> </h1> */}
-                                {/* <h1 style={{ textAlign: 'center', borderBottom: '2px solid #1b74e4' }}> <AccountCircleIcon sx={{ fontSize: 35, color: '#1b74e4' }} /> </h1> */}
                             </div>
                             <div className="profile-sidebar" style={{ marginTop: '-180px' }}>
 
-                                {/* <h1>{uname}</h1> */}
                                 <div className="profile-userpic">
                                     <div className='profile'>
-                                    <img src={userdata.profile} style={{ width: '250px', height: '250px', position: 'relative' }} class="img-responsive" alt="">
+                                    <img src={userobj.profile} style={{ width: '250px', height: '250px', position: 'relative' }} class="img-responsive" alt="">
                                     </img>
                                     </div>
                                     <div className='editprofile'>
@@ -93,24 +61,9 @@ const Profile = () => {
                                 {/* <!-- END SIDEBAR USERPIC --> */}
                                 {/* <!-- SIDEBAR USER TITLE --> */}
                                 <div className="profile-usertitle">
-                                    <h3>{userdata.name}</h3>
+                                    <h3>{userobj.name}</h3>
                                 </div>
-                                {/* <div className="profile-usermenu">
-                                    <ul className="nav" style={{ flexDirection: 'column', alignItems: 'center' }}>
-                                        <li>
-                                            <h4> email: {userdata.email}</h4>
-                                        </li>
-                                        <br />
-                                        <li>
-                                            <h4> Bio: {userdata.bio} </h4>
-                                        </li>
-
-                                        <li>
-                                        </li>
-                                    </ul>
-                                </div> */}
                                 <div>
-                                {/* <button onClick={showingModal}>Edit Profile Photo</button> */}
                                 <Profilemodal/>
                                 </div>
                                 <div>    

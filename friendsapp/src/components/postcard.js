@@ -1,8 +1,7 @@
-import './postcard.css'
 import { useEffect, useState } from "react"
 import { Firestore } from "../firebase/firebase"
 import {LikeOutlined, CommentOutlined, ShareAltOutlined} from '@ant-design/icons'
-
+import './profiletabs/profiletabs.css'
 const Postcard = () => {
 
     const [data, setdata] = useState([])
@@ -27,14 +26,13 @@ const Postcard = () => {
 
             {data.map((post) => {
 
-                const { postText, postName, postImage } = post
+                const { postText, postName, postImage, profile } = post
                 // {console.log(post.postImage)}
                 return (
                     <>
-                        <div class="card">
+                        {/* <div class="card">
                             <h5 class="card-header">{postName}</h5>
                             <div class="card-body" style={{ backgroundColor: '#f7f7f7' }}>
-                                {/* <h5 class="card-title">Special title treatment</h5> */}
                                 <p class="card-text">{postText}</p>
                                 {post.postImage ? <img src={postImage} style={{ width: '100%', height: '350px' }} class="img-responsive" /> : <span></span>}
                             </div>
@@ -43,7 +41,34 @@ const Postcard = () => {
                                 <div><CommentOutlined style={{ fontSize: 15}} /></div>
                                 <div><ShareAltOutlined style={{ fontSize: 15}} /></div>
                             </div>
-                        </div>
+                        </div> */}
+
+
+<div className='post'>
+                            <div className='postHeader'>
+                                <div style={{margin:'10px 10px'}}>
+                                <img src={profile}/>
+                                </div>
+                                <div className='name'>
+                                <span>{postName}</span>
+                                </div>
+                            </div>
+                            <div className='caption'>
+                                <span>{postText}</span>
+                            </div>
+                            <div className='postImage'>
+                                <img src={postImage}/>
+                            </div>
+                            {/* <hr/> */}
+                            <div className='likediv'>
+                                <div><LikeOutlined style={{ fontSize: 15}} /></div>
+                                <div><CommentOutlined style={{ fontSize: 15}} /></div>
+                                <div><ShareAltOutlined style={{ fontSize: 15}} /></div>
+                            </div>
+                            <hr/>
+                         </div>
+
+
                     </>
                     //     ) 
                 )
