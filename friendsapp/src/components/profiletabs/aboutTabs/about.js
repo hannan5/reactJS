@@ -1,16 +1,29 @@
 import { Tabs, Typography } from 'antd';
-import { useState } from 'react';
-import { CheckOutlined, HighlightOutlined, SmileOutlined, SmileFilled } from '@ant-design/icons';
+import { useContext, useEffect, useState } from 'react';
+import { doc, onSnapshot, setDoc} from "firebase/firestore";
+import { Firestore } from '../../../firebase/firebase';
+import CurentUserContext from '../../../context/CurrentUserContext';
 
 const { Text, Link } = Typography;
 const Aboutabs = () => {
 
-    const [study, setstudy] = useState('This is an editable text.');
-    const [live, setlive] = useState('This is an editable text.');
-    const [status, setstatus] = useState('This is an editable text.');
-    const [insta, setinsta] = useState('This is an editable text.');
+
+    const user = useContext(CurentUserContext)
+
+    const [study, setstudy] = useState([]);
+    const [live, setlive] = useState([]);
+    const [status, setstatus] = useState([]);
+    const [insta, setinsta] = useState([]);
 
 
+
+
+    Firestore.collection('profile').doc(user.uid).update({
+        education: study,
+        live:live,
+        status:status,
+        insta:insta
+    })
 
     return (
         <>
