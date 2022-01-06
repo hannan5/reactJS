@@ -78,9 +78,9 @@ return (
                             </div>
                             {/* <hr/> */}
                             <div className='likediv'>
-                                <div><LikeOutlined style={{ fontSize: 15}} /></div>
-                                <div><CommentOutlined style={{ fontSize: 15}} /></div>
-                                <div><ShareAltOutlined style={{ fontSize: 15}} /></div>
+                                <div><LikeOutlined style={{ fontSize: 15, cursor:'pointer'}} /></div>
+                                <div><CommentOutlined style={{ fontSize: 15, cursor:'pointer'}} /></div>
+                                <div><ShareAltOutlined style={{ fontSize: 15, cursor:'pointer'}} /></div>
                             </div>
                             <hr/>
                          </div>

@@ -10,10 +10,10 @@ const Aboutabs = () => {
 
     const user = useContext(CurentUserContext)
 
-    const [study, setstudy] = useState([]);
-    const [live, setlive] = useState([]);
-    const [status, setstatus] = useState([]);
-    const [insta, setinsta] = useState([]);
+    const [study, setstudy] = useState(user.education);
+    const [live, setlive] = useState(user.live);
+    const [status, setstatus] = useState(user.status);
+    const [insta, setinsta] = useState(user.insta);
 
 
 
@@ -64,7 +64,7 @@ const Aboutabs = () => {
                             <div className='intro-detail'>
                             <span> Status <Text level={5} editable={{ onChange: setstatus }}>  {status}</Text> </span>
                             </div>   
-                            <div className='intro-detail'>
+                             <div className='intro-detail'>
                             <span> Instagram <Link level={5} editable={{ onChange: setinsta }}>  {insta}</Link> </span>
 
                             </div>

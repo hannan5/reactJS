@@ -19,6 +19,11 @@ const Postcard = () => {
         getpost()
 
     }, [])
+
+    const [like, setlike] = useState(0)
+    const likehandler = () =>{
+        setlike++
+    }
     return (
         <>
 
@@ -61,9 +66,9 @@ const Postcard = () => {
                             </div>
                             {/* <hr/> */}
                             <div className='likediv'>
-                                <div><LikeOutlined style={{ fontSize: 15}} /></div>
-                                <div><CommentOutlined style={{ fontSize: 15}} /></div>
-                                <div><ShareAltOutlined style={{ fontSize: 15}} /></div>
+                                <div><LikeOutlined style={{ fontSize: 15, cursor:'pointer'}} onClick={likehandler} />{like}</div>
+                                <div><CommentOutlined style={{ fontSize: 15, cursor:'pointer'}} /></div>
+                                <div><ShareAltOutlined style={{ fontSize: 15, cursor:'pointer'}} /></div>
                             </div>
                             <hr/>
                          </div>

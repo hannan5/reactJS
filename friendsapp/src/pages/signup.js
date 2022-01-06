@@ -36,7 +36,7 @@ const Signup = () => {
         console.log(errorMessage);
       })
     .then(navigate('/'))
-    window.location.reload(true)
+    // window.location.reload(false)
     
   }
   
@@ -58,7 +58,7 @@ const Signup = () => {
   <input id='password' type='password' placeholder='Enter your Password' name='password' onChange={inputhandler}/>
 </div>
 <div className='button'>
-  <button className='loginbtn' onClick={Submithandler}>Signup</button>
+  <button className='loginbtn' type='submit' onClick={Submithandler}>Signup</button>
   <p>Already have an Account? <Link to='/' style={{ color: '#000', textDecoration:'none' }}>  Login </Link> Here</p>
 
 </div>
