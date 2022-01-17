@@ -8,7 +8,6 @@ import CurentUserContext from '../context/CurrentUserContext';
 const AppModal = () => {
 
     const userobj = useContext(CurentUserContext)
-    console.log(userobj)
     const [user, setUser] = useState({})
     onAuthStateChanged(auth, (currentUser)=>{
         setUser(currentUser)
@@ -17,7 +16,7 @@ const AppModal = () => {
     const uid = user.uid
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [info, setinfo] = useState({})
-
+    let autouid = new Date().getTime()
     const showModal = () => {
         setIsModalVisible(true);
     };
@@ -68,12 +67,14 @@ uploadtask.on(
     ()=>{
         storage.ref('singleimage').child(singleimage.name).getDownloadURL()
         .then((imageUrl)=>{
-    Firestore.collection('post').doc().set({
+    Firestore.collection('post').doc(`${autouid}`).set({
         postText: info.post,
         postName: name,
         postImage:imageUrl,
         uid:uid,
-        profile:userobj.profile
+        profile:userobj.profile,
+        postuid : autouid,
+        liked:[]
     })
 
     }
