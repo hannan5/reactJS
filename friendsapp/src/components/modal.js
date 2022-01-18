@@ -30,15 +30,6 @@ const AppModal = () => {
         // console.log(name, value)
         setinfo({ ...info, [name]: value })
     }
-    // const submithandler = () => {
-    //     Firestore.collection('post').doc().set({
-    //         postText: info.post,
-    //         postName: name,
-    //     })
-    // }
-// let dates = new Date
-// console.log(dates.getDate())
-
 
     const [singleimage, setsingleimage] = useState('')
     function handleimage (event){
