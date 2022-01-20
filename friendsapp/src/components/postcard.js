@@ -8,6 +8,7 @@ import { Collapse, Comment, Input, Button, Form } from "antd";
 import Avatar from "antd/lib/avatar/avatar";
 import InputEmoji from "react-input-emoji";
 import Postcomment from "./postcomments"
+import { Link } from "react-router-dom"
 const Postcard = () => {
 
     const [form] = Form.useForm();
@@ -16,6 +17,7 @@ const Postcard = () => {
 
     const userobj = useContext(CurentUserContext)
     const [data, setdata] = useState([])
+    
     const getpost = () => {
         Firestore.collection('post').onSnapshot((querySnapshot) => {
             const items = []
@@ -29,8 +31,10 @@ const Postcard = () => {
         getpost()
     }, [])
 
+    const [callBack, setcallBack] = useState('[]')
     function callback(key) {
         // console.log(key);
+        setcallBack(key)
     }
 
     const likehandler = (element) => {
@@ -50,18 +54,19 @@ const Postcard = () => {
     }
 
 
-    const onFinish = (postobj, Comment) => {
+    const onFinish =  (postobj, Comment) => {
         console.log('Success:', postobj, Comment.comment);
         let commentuid = new Date().getTime()
-        Firestore.collection('post').doc(`${postobj}`).collection('comments').doc(`${commentuid}`).set({
-            comment:Comment.comment,
-            commentpic:userobj.profile,
-            name:userobj.name,
-            adminuid:userobj.uid,
-            postuid:postobj,
-            commentuid:commentuid
+       Firestore.collection('post').doc(`${postobj}`).collection('comments').doc(`${commentuid}`).set({
+            comment: Comment.comment,
+            commentpic: userobj.profile,
+            name: userobj.name,
+            adminuid: userobj.uid,
+            postuid: postobj,
+            commentuid: commentuid
         })
-
+        setcallBack(Comment.comment)
+        form.resetFields();  
     };
 
     return (
@@ -72,6 +77,7 @@ const Postcard = () => {
                 return (
                     <>
                         <div className='post'>
+                            {<Link to={`/profile/${uid}`} style={{textDecoration:'none'}}>
                             <div className='postHeader'>
                                 <div style={{ margin: '10px 10px' }}>
                                     <img src={profile} />
@@ -80,6 +86,7 @@ const Postcard = () => {
                                     <span>{postName}</span>
                                 </div>
                             </div>
+                            </Link>}
                             <div className='caption'>
                                 <span>{postText}</span>
                             </div>
@@ -93,26 +100,26 @@ const Postcard = () => {
                                         <Panel header={<CommentOutlined style={{ fontSize: 15, cursor: 'pointer' }} />}>
                                             <div style={{ width: '500px' }}>
                                                 <Comment
-                                                    avatar={<Avatar src={userobj.profile}></Avatar>}
+                                                    // avatar={<Avatar src={userobj.profile}></Avatar>}
                                                     content={
 
                                                         <Form
-                                                        form={form}
-                                                            onFinish={(comment)=>{onFinish(post.postuid, comment)}}
+                                                            form={form}
+                                                            onFinish={(comment) => { onFinish(post.postuid, comment) }}
                                                         >
                                                             <Form.Item
-                                                            name='comment'
+                                                                name='comment'
                                                             >
-                                                            <InputEmoji />
+                                                                <InputEmoji />
                                                             </Form.Item>
                                                             <Form.Item>
-                                                            <Button htmlType='submit'>Add Comment</Button>
+                                                                <Button htmlType='submit'>Add Comment</Button>
                                                             </Form.Item>
                                                         </Form>
 
                                                     }
                                                 ></Comment>
-                                                <Postcomment post={post}/>
+                                                <Postcomment post={post} />
                                             </div>
                                         </Panel>
                                     </Collapse>

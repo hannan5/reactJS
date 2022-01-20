@@ -45,7 +45,7 @@ const AppModal = () => {
     }
     function singleupload(event){
 event.preventDefault()
-const uploadtask = storage.ref('singleimage').child(singleimage.name).put(singleimage);
+const uploadtask = storage.ref('singleimage').child(`${autouid}`).put(singleimage);
 uploadtask.on(
     'state_changed',
     (snapshot)=>{
@@ -56,7 +56,7 @@ uploadtask.on(
         console.log(err)
     },
     ()=>{
-        storage.ref('singleimage').child(singleimage.name).getDownloadURL()
+        storage.ref('singleimage').child(`${autouid}`).getDownloadURL()
         .then((imageUrl)=>{
     Firestore.collection('post').doc(`${autouid}`).set({
         postText: info.post,

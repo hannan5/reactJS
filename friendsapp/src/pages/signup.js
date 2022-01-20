@@ -1,4 +1,3 @@
-import { Form, Input, Button, Checkbox } from 'antd';
 import { useState } from 'react';
 import {Link, useNavigate } from 'react-router-dom';
 import { auth, Firestore } from '../firebase/firebase';
@@ -14,7 +13,6 @@ const Signup = () => {
     const name = event.target.name;
     const value = event.target.value
     setinfo({ ...info, [name]: value })
-    // console.log({[name] : value})
   }
   const Submithandler = () => {
     console.log(info.name)
@@ -27,7 +25,11 @@ const Signup = () => {
         Firestore.collection('profile').doc(user.user.uid).set({
           email: info.email,
           name: info.name,
-          uid: user.user.uid
+          uid: user.user.uid,
+          education: '',
+          live:'',
+        status:'',
+        insta:''
         })
 
       })
@@ -40,13 +42,6 @@ const Signup = () => {
     
   }
   
-  const onFinish = (values) => {
-    console.log('Success:', values);
-  };
-
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
   return (
     <>
 <div className='main'>
@@ -59,7 +54,7 @@ const Signup = () => {
 </div>
 <div className='button'>
   <button className='loginbtn' type='submit' onClick={Submithandler}>Signup</button>
-  <p>Already have an Account? <Link to='/' style={{ color: '#000', textDecoration:'none' }}>  Login </Link> Here</p>
+  <p><Link to='/' style={{ color: '#000', textDecoration:'none' }}> Already have an Account? Login Here </Link> </p>
 
 </div>
   </div>

@@ -7,16 +7,12 @@ import CurentUserContext from '../../../context/CurrentUserContext';
 const { Text, Link } = Typography;
 const Aboutabs = () => {
 
-
     const user = useContext(CurentUserContext)
 
     const [study, setstudy] = useState(user.education);
     const [live, setlive] = useState(user.live);
     const [status, setstatus] = useState(user.status);
     const [insta, setinsta] = useState(user.insta);
-
-
-
 
     Firestore.collection('profile').doc(user.uid).update({
         education: study,

@@ -48,7 +48,7 @@ const Login = () => {
 </div>
 <div className='button'>
   <button className='loginbtn' onClick={loginhandler}>Login</button>
-  <p>Create a New Account <Link to='/signup' style={{ color: '#000', textDecoration:'none' }}>  Signup </Link> Here</p>
+  <p><Link to='/signup' style={{ color: '#000', textDecoration:'none' }}> Create a New Account Signup Here</Link> </p>
 </div>
   </div>
 
